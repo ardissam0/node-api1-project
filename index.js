@@ -8,8 +8,7 @@ let users = [
     {
         id: 7,
         name: 'dummy seven',
-        email: 'dummy7@dumdum.com',
-        password: 'dummy123'
+        bio: 'dum dum dum dum dum dum dum '
     }, 
 ];
 
@@ -22,42 +21,36 @@ server.get('/', (req, res) => {
 });
 
 server.get('/api/users', (req, res) => {
-    let users = [
+    const users = [
         {
             id: 1,
             name: 'dummy one',
-            email: 'dummy1@dumdum.com',
-            password: 'dummy123'
+            bio: 'dum dum dum dum dum dum dum '
         },
         {
             id: 2,
             name: 'dummy two',
-            email: 'dummy2@dumdum.com',
-            password: 'dummy123'
+            bio: 'dum dum dum dum dum dum dum '
         },
         {
             id: 3,
             name: 'dummy three',
-            email: 'dummy3@dumdum.com',
-            password: 'dummy123'
+            bio: 'dum dum dum dum dum dum dum '
         },
         {
             id: 4,
             name: 'dummy four',
-            email: 'dummy4@dumdum.com',
-            password: 'dummy123'
+            bio: 'dum dum dum dum dum dum dum '
         },
         {
             id: 5,
             name: 'dummy five',
-            email: 'dummy5@dumdum.com',
-            password: 'dummy123'
+            bio: 'dum dum dum dum dum dum dum '
         },
         {
             id: 6,
             name: 'dummy six',
-            email: 'dummy6@dumdum.com',
-            password: 'dummy123'
+            
         },
     ];
     res.json(users);
