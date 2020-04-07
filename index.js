@@ -21,7 +21,7 @@ server.get('/', (req, res) => {
 });
 
 server.get('/api/users', (req, res) => {
-    const users = [
+    let users = [
         {
             id: 1,
             name: 'dummy one',
