@@ -1,13 +1,14 @@
 // console.log('\n === index.js executed! ===\n');
 
 const express = require('express');
+// const shortid = require('shortid');
 
 const server = express();
 
 let users = [
     {
-        id: 7,
-        name: 'dummy seven',
+        id: '',
+        name: 'dummy',
         bio: 'dum dum dum dum dum dum dum '
     }, 
 ];
@@ -20,43 +21,24 @@ server.get('/', (req, res) => {
     res.json({api: "running......."});
 });
 
+
+
 server.get('/api/users', (req, res) => {
-    let users = [
-        {
-            id: 1,
-            name: 'dummy one',
-            bio: 'dum dum dum dum dum dum dum '
-        },
-        {
-            id: 2,
-            name: 'dummy two',
-            bio: 'dum dum dum dum dum dum dum '
-        },
-        {
-            id: 3,
-            name: 'dummy three',
-            bio: 'dum dum dum dum dum dum dum '
-        },
-        {
-            id: 4,
-            name: 'dummy four',
-            bio: 'dum dum dum dum dum dum dum '
-        },
-        {
-            id: 5,
-            name: 'dummy five',
-            bio: 'dum dum dum dum dum dum dum '
-        },
-        {
-            id: 6,
-            name: 'dummy six',
-            
-        },
-    ];
-    res.json(users);
+    res.status(200).json(users);
 });
 
-server.post('/api.users', (req, res) => {
+
+
+server.get(`/api/users/:id`, (req, res) => {
+    const userid = req.params;
+    const fUser = users.find(user => user.id == {userid})
+    res.status(201).json(fUser)
+});
+
+
+
+
+server.post('/api/users', (req, res) => {
 const userInfo = req.body;
 
 users.push(userInfo);
@@ -64,6 +46,8 @@ users.push(userInfo);
 res.status(201).json(users);
 
 });
+
+
 
 const port = 5000;
 
